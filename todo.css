@@ -1,0 +1,699 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Work sans", sans-serif;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body
+{
+    background-color: #a0d8e8;
+    color: #000000;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+
+header {
+    margin-bottom: 40px;
+}
+
+h1 {
+    font-size: 2.5em;
+}
+
+.theme-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.circle {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+#dark-mode-circle {
+    background-color: #3d0303;
+    border: 1px solid #f0f0f0;
+}
+
+#light-mode-circle {
+    background-color: #a0d8e8;
+    border: 1px solid #000000;
+}
+
+#theme-switch {
+    display: none;
+}
+
+
+.tasks {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.task-section {
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.task-section h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+textarea {
+    width: 100%;
+    height: 100px;
+    padding: 10px;
+    font-size: 1em;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    resize: none;
+    background-color: #fff;
+    color: #333;
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: #3d0303;
+    color: #d6d67f;
+}
+
+
+.options {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.option {
+    font-size: 1.5em;
+    margin: 10px 0;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #333;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    transition: background-color 0.3s, color 0.3s;
+    width: 80%;
+    text-align: center;
+}
+
+.option:hover {
+    background-color: #000100;
+    color:white;
+}
+
+
+body.dark-mode .option:hover {
+    background-color: #d6d67f;
+    color: #3d0303; 
+}
+/* Styles for Top Priorities Page */
+.task-input {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+
+#task-input,
+body .task-input input[type="time"] 
+{
+    width: 60%;
+    padding: 10px;
+    font-size: 1em;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    margin-right: 10px;
+    background-color: #12343b; /* Match the background color in your image */
+    color: white;
+}
+
+.dark-mode #task-input,
+body .dark-mode .task-input input[type="time"] {
+    width: 60%;
+    padding: 10px;
+    font-size: 1em;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    margin-right: 10px;
+    background-color:#d6d67f ; /* Match the background color in your image */
+    color: black;
+}
+
+
+body.dark-mode .task-input input[type="time"] 
+{
+    background-color: #d6d67f;
+    padding: 10px;
+    color: #f4f4f4;
+    border: 1px solid #777;
+}
+
+
+#add-task 
+{
+    padding: 1px 30px;
+    font-size: 1em;
+    border-radius: 4px;
+    background-color: #1a6d86; /* Match the button color in your image */
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#add-task:hover {
+    background-color: #124e60;
+}
+
+#task-list {
+    list-style: none;
+    padding: 0;
+}
+
+.task-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #0a3d62; /* Match the background color of tasks in your image */
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 4px;
+    color: white;
+}
+
+
+.dark-mode .task-input
+ {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #3d0303; /* Match the background color of tasks in your image */
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 4px;
+    color: white;
+}
+
+.dark-mode #add-task {
+    padding: 1px 30px;
+    font-size: 1em;
+    border-radius: 4px;
+    background-color: yellow; /* Match the button color in your image */
+    color: black;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.dark-mode #add-task:hover 
+{
+    background-color: #b9b94c;
+}
+
+.task-item .task-text 
+{
+
+    flex-grow: 1;
+    color: #e2e2e2;
+}
+
+.task-item .task-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.task-item .task-actions button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2em;
+    color: #333;
+    transition: color 0.3s;
+}
+
+.task-item .task-actions button:hover {
+    color: #ffffff; 
+}
+
+.task-item .task-actions .fa-check {
+    color: #2ecc71; 
+}
+
+.task-item .task-actions .fa-trash {
+    color: #e74c3c;
+}
+
+body.dark-mode .task-item {
+    background-color:rgb(113, 113, 1);
+    color: black;
+}
+
+/* Animation for dropping off a task */
+@keyframes drop-off {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+}
+
+.task-item.removing {
+    animation: drop-off 0.5s forwards;
+}
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Work Sans", sans-serif;
+    background-color: #a0d8e8;
+    color: #000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.container h1 .dark-mode
+{
+    color: white;
+}
+
+header {
+    margin-bottom: 40px;
+}
+
+h1 {
+    font-size: 2.5em;
+    color: #333;
+}
+
+/* Challenge Card */
+.challenge-card {
+    background-color: #0a3d62; /* Dark background to match your existing theme */
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    margin-bottom: 20px;
+    color: white; /* Light text color for contrast */
+}
+
+.challenge-text {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    color:white; /* Matching light text color */
+}
+
+.new-challenge-btn {
+    background-color: #1a6d86; /* Button color from your existing theme */
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.2em;
+    transition: background-color 0.3s ease;
+}
+
+.new-challenge-btn:hover {
+    background-color: #124e60; /* Hover effect matching your theme */
+}
+.dark-mode .new-challenge-btn:hover
+{
+    background-color: #b9b94c;
+}
+
+/* User Challenge Input */
+.user-challenge {
+    margin-bottom: 20px;
+}
+
+#user-challenge-input {
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    width: 100%;
+    resize: none;
+    background-color:white; 
+    color: black; 
+    margin-bottom: 10px;
+}
+
+.challenge-buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.add-challenge-btn {
+    background-color: #61b3ff;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.2em;
+    transition: background-color 0.3s ease;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    display: inline-block;
+}
+
+.delete-challenge-btn {
+    background-color: #ff6961; /* Red for the delete button */
+}
+
+.add-challenge-btn:hover{
+    background-color: #5caaff; /* Hover effect */
+}
+
+.delete-challenge-btn:hover {
+    background-color: #ff5c5c;
+}
+
+/* User Challenges List */
+.user-challenges-list {
+    list-style-type: none;
+    margin-top: 20px;
+}
+
+.user-challenges-list li {
+    background-color: #0a3d62; /* Match the dark background of tasks */
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+.user-challenges-list li button {
+    background: transparent;
+    border: none;
+    color: #ff6961;
+    cursor: pointer;
+    font-size: 1.2em;
+    transition: color 0.3s;
+}
+
+.user-challenges-list li button:hover {
+    color: #ff5c5c;
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: #3d0303;
+    color: #d6d67f;
+}
+
+body.dark-mode .challenge-card {
+    background-color:#d6d67f;
+    color: black;
+}
+
+.dark-mode .new-challenge-btn
+{
+    background-color: yellow;
+    color:black;
+}
+
+body.dark-mode .challenge-text {
+    color: black;
+}
+
+body.dark-mode #user-challenge-input {
+    background-color: white;
+    color:black;
+}
+
+body.dark-mode .user-challenges-list li {
+    background-color: #d6d67f;
+    color: black;
+}
+
+/* Animation for dropping off a task */
+@keyframes drop-off {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+}
+
+.user-challenges-list li.removing {
+    animation: drop-off 0.5s forwards;
+}
+/* Dark Mode Styles */
+body.dark-mode h1 {
+    color: #d6d67f;
+}
+/* Basic Reset */
+
+.container {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    margin-bottom: 30px;
+}
+
+h1 {
+    font-size: 2.5em;
+    color: #333;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.theme-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.circle {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+#dark-mode-circle {
+    background-color: #3d0303;
+    border: 1px solid #f0f0f0;
+}
+
+#light-mode-circle {
+    background-color: #a0d8e8;
+    border: 1px solid #000000;
+}
+
+#theme-switch {
+    display: none;
+}
+
+/* Emoji Grid */
+.emoji-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.emoji {
+    font-size: 2.5em;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+.emoji:hover {
+    transform: scale(1.2);
+}
+
+/* Selected Emoji Section */
+.selected-emoji-section {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.selected-emoji {
+    font-size: 5em;
+    margin-bottom: 20px;
+}
+
+textarea {
+    width: 80%;
+    padding: 10px;
+    font-size: 1em;
+    border-radius: 8px;
+    border: 1px solid black;
+    resize: none;
+    margin-bottom: 10px;
+    background-color: #fff;
+    color: #333;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 20px;
+}
+
+.save-btn, .delete-btn {
+    background-color: #61b3ff;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.2em;
+    transition: background-color 0.3s ease;
+    width: 50px;
+    height: 50px;
+}
+
+.delete-btn {
+    background-color: #ff6961;
+}
+
+.save-btn:hover {
+    background-color: #5caaff;
+}
+
+.delete-btn:hover {
+    background-color: #ff5c5c;
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: #3d0303;
+    color: #d6d67f;
+}
+
+body.dark-mode textarea {
+    background-color: black;
+    color: white;
+    border: 1px solid white;
+    
+}
+
+body.dark-mode .save-btn {
+    background-color: #d6d67f;
+    color: #3d0303;
+}
+
+body.dark-mode .delete-btn {
+    background-color: #ff6961;
+}
+
+.selected-emoji-section.active {
+    display: flex;
+}
+
+.feeling-item .delete-feeling-item i {
+    font-size: 14px; 
+}
+
+.feeling-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #f9f9f9; 
+    border: 1px solid black; 
+    border-radius: 5px; 
+    padding: 10px; 
+    margin-bottom: 10px; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+    position: relative; 
+}
+
+.dark-mode .feeling-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: black; 
+    border: 1px solid white; 
+    border-radius: 5px; 
+    padding: 10px; 
+    margin-bottom: 10px; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+    position: relative; 
+}
+
+
+
+
+.feeling-item span {
+    font-size: 16px; 
+}
+
+.feeling-item .feeling-datetime {
+    font-size: 12px; 
+    color: #888; 
+}
+
+.feeling-item .delete-feeling-item .fa-trash{
+    color:red;     
+    border: none; 
+    cursor: pointer; 
+    padding: 5px; 
+    border-radius: 3px; 
+    font-size: 14px; 
+    position: absolute; 
+    top: 10px;
+    right: 10px;
+}
+
+.feeling-item .delete-feeling-item i {
+    margin: 0; 
+}
+
+
+
+

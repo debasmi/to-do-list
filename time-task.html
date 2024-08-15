@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schedule</title>
+    <link rel="stylesheet" href="todo.css">
+    <link rel="shortcut icon" type="image/png" sizes="16x16" href="to-do-list.png" >
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Schedule for the Day</h1>
+            <div class="theme-toggle">
+                <div class="circle" id="dark-mode-circle"></div>
+                <input type="checkbox" id="theme-switch">
+                <div class="circle" id="light-mode-circle"></div>
+            </div>
+    
+        </header>
+
+        
+        <div>
+            <p><span id="datetime"></span></p>
+            <script> var dt = new Date();
+            document.getElementById("datetime").innerHTML = dt.toLocaleString();
+        </script>
+        </div>
+
+        <br>
+        <main>
+            <div class="task-input">
+                <input type="time" id="task-time" placeholder="Add Time">
+                <input type="text" id="task-input" placeholder="Add a task.">
+                <button id="add-task">I Got This!</button>
+
+            </div>
+            <ul id="task-list"></ul>
+        </main>
+    </div>
+    <!--<script src="https://kit.fontawesome.com/a076d05399.js"></script>-->
+    <script src="todo.js"></script>
+</body>
+</html>

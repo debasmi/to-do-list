@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How Do I Feel</title>
+    <link rel="stylesheet" href="todo.css">
+    <link rel="shortcut icon" type="image/png" sizes="16x16" href="to-do-list.png" >
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>How Do I Feel?</h1>
+            <div class="theme-toggle">
+                <div class="circle" id="dark-mode-circle"></div>
+                <input type="checkbox" id="theme-switch">
+                <div class="circle" id="light-mode-circle"></div>
+            </div>
+        </header>
+
+        <div>
+            <p><span id="datetime"></span></p>
+            <script> var dt = new Date();
+            document.getElementById("datetime").innerHTML = dt.toLocaleString();
+        </script>
+        </div>
+
+        <br>
+        <main>
+            <div class="emoji-grid">
+                <div class="emoji" data-emoji="😊">😊</div>
+                <div class="emoji" data-emoji="😢">😢</div>
+                <div class="emoji" data-emoji="😡">😡</div>
+                <div class="emoji" data-emoji="😌">😌</div>
+                <div class="emoji" data-emoji="😔">😔</div>
+                <div class="emoji" data-emoji="😂">😂</div>
+                <!-- Add more emojis as needed -->
+            </div>
+
+            <div class="selected-emoji-section" id="selected-emoji-section">
+                <div class="selected-emoji" id="selected-emoji">😊</div>
+                <textarea id="feeling-description" placeholder="Describe your feelings..."></textarea>
+                <div class="action-buttons">
+                    <button id="save-feeling" class="save-btn"><i class="fa fa-check"></i> </button>
+                    <button id="delete-feeling" class="delete-btn"><i class="fa fa-trash"></i> </button>
+                </div>
+            </div>
+
+            <ul id="feelings-list"></ul>
+
+        </main>
+    </div>
+
+
+
+    <script src="feelings.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--check for bootstrap and and jquery check for imporvement go through code-->
